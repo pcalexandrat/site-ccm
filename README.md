@@ -1,3 +1,3 @@
 # site-ccm
-## desenvolvido por: Alexandra
-### Matemática II Programação 2
+## Desenvolvido em html e css - Matemática II Programação 1
+### desenvolvido por: Alexandra :thumbsup:
