@@ -1,3 +1,3 @@
-# site-ccm
-## Desenvolvido em html e css - Matemática II Programação 1
+# página desenovlida para o concurso agrinho 2026
+## Desenvolvido em html, css e javascript -
 ### desenvolvido por: Alexandra :thumbsup:
