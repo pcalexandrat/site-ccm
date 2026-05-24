@@ -17,6 +17,15 @@
             <li class="cabecalho-lista-item">Subtítulo</li>
         </ul>
     </header>
+     <button id="accessibility-btn" class="accessibility-fixed" aria-label="Menu de acessibilidade" aria-expanded="false">
+    A+
+  </button>
+
+  <div id="accessibility-menu" class="accessibility-menu hidden" role="dialog" aria-label="Menu de acessibilidade">
+    <button type="button" onclick="increaseFont()">Aumentar fonte</button>
+    <button type="button" onclick="decreaseFont()">Diminuir fonte</button>
+    <button type="button" onclick="toggleContrast()">Alto contraste</button>
+  </div>
     <section class="agro">
         <div class="agro-div-conteudo">
             <h2 class="agro-titulo">Sobre o tema proposto</h2>
@@ -63,5 +72,6 @@
     <footer class="rodape">
         <img class="rodape-imagem"src="logo.png" alt="logo ">
     </footer>
+     <script src="script2.js"></script>
 </body>
 </html>
