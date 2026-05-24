@@ -10,7 +10,6 @@
     padding: 0;
 }
 
-
 .cabecalho {
     background-color: #4d805d;
     color:var(--branco);
@@ -92,9 +91,9 @@
     color: var(--branco);
 }
 
-.alto-contraste #cabecalho,
-.alto-contraste #rodape,
-.alto-contraste #agro {
+.alto-contraste .cabecalho,
+.alto-contraste .rodape,
+.alto-contraste .agro {
     background-color: var(--preto);
     color: var(--branco);
 }
