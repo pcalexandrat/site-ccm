@@ -1,37 +1,29 @@
-const DEFAULT_FONT_SIZE = 16;
-const MIN_FONT_SIZE = 14;
-const MAX_FONT_SIZE = 20;
-let currentFontSize = DEFAULT_FONT_SIZE;
+document.addEventListener('DOMContentLoaded', function () {
+    const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade')
+    const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade')
 
-const applyFontSize = () => {
-  document.documentElement.style.fontSize = `${currentFontSize}px`;
-};
+    botaoDeAcessibilidade.addEventListener('click', function (){
+        botaoDeAcessibilidade.classList.toggle('rotacao-botao');
+        opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
 
-const increaseFont = () => {
-  currentFontSize = Math.min(MAX_FONT_SIZE, currentFontSize + 2);
-  applyFontSize();
-};
+        const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
+        botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado);
+    })
+    
+    const aumentaFonteBotao = document.getElementById('aumentar-fonte');
+    const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+    const alternaContraste = document.getElementById('alterna-contraste');
 
-const decreaseFont = () => {
-  currentFontSize = Math.max(MIN_FONT_SIZE, currentFontSize - 2);
-  applyFontSize();
-};
-
-const toggleContrast = () => {
-  document.body.classList.toggle('high-contrast');
-};
-
-
-const accessibilityBtn = document.getElementById('accessibility-btn');
-const accessibilityMenu = document.getElementById('accessibility-menu');
-const revealElements = document.querySelectorAll('.reveal');
-const dots = document.querySelectorAll('.dot');
-
-
-
-if (accessibilityBtn && accessibilityMenu) {
-  accessibilityBtn.addEventListener('click', () => {
-    const isHidden = accessibilityMenu.classList.toggle('hidden');
-    accessibilityBtn.setAttribute('aria-expanded', String(!isHidden));
-  });
-}
+    let tamanhoAtualFonte = 1;
+    aumentaFonteBotao.addEventListener('click', function(){
+        tamanhoAtualFonte += 0.1;
+        document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
+    })
+    diminuiFonteBotao.addEventListener('click', function(){
+        tamanhoAtualFonte -= 0.1;
+        document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
+    })
+    alternaContraste.addEventListener('click', function(){
+         document.body.classList.toggle('alto-contraste');
+    })
+})
