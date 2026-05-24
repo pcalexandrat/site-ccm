@@ -1,35 +1,22 @@
-document.addEventListener('DOMContentLoaded', function(){
-    const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade');
-    const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
-    botaoDeAcessibilidade.addEventListener('click', function () {
-        botaoDeAcessibilidade.classList.toggle('rotacao-botao');
-        opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
-    })
+const DEFAULT_FONT_SIZE = 18;
+const MIN_FONT_SIZE = 14;
+const MAX_FONT_SIZE = 22;
+let currentFontSize = DEFAULT_FONT_SIZE;
 
-    let tamanhoAtualFonte = 1;
-    
-    const aumentaFonteBotao = document.getElementById('aumentar-fonte');
-    const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+const applyFontSize = () => {
+  document.documentElement.style.fontSize = `${currentFontSize}px`;
+};
 
-    aumentaFonteBotao.addEventListener('click', function(){
-        tamanhoAtualFonte += 0.1;
-        document.body.style.fontSize = `${tamanhoAtualFonte}rem`
+const increaseFont = () => {
+  currentFontSize = Math.min(MAX_FONT_SIZE, currentFontSize + 2);
+  applyFontSize();
+};
 
-    })
+const decreaseFont = () => {
+  currentFontSize = Math.max(MIN_FONT_SIZE, currentFontSize - 2);
+  applyFontSize();
+};
 
-    diminuiFonteBotao.addEventListener('click', function(){
-        tamanhoAtualFonte -= 0.1;
-        document.body.style.fontSize = `${tamanhoAtualFonte}rem`
-
-    })
-
-    const alternaContraste = document.getElementById('alterna-contraste')
-    alternaContraste.addEventListener('click', function () {
-        document.body.classList.toggle('alto-contraste')
-    })
-
-
-    })
-
-
-
+const toggleContrast = () => {
+  document.body.classList.toggle('high-contrast');
+};

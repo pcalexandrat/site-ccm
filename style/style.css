@@ -24,15 +24,6 @@
 }
 
 
-.navbar {
-  position: relative;
-}
-
-.nav-desktop {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 .accessibility-fixed {
   position: fixed;
   right: 18px;
