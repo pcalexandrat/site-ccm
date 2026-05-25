@@ -49,6 +49,15 @@
 .agro-titulo{
     padding: 24px 0;
 }
+.contato{
+  background-image: linear-gradient(#64c095,#2c744a);
+    color:var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 0;
+}
+
 .rodape{
     background-color:var(--preto);
     text-align: center;
