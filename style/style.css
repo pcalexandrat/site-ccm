@@ -32,6 +32,7 @@
 
 .agro-imagem{
     width: 25%;
+    margin: 10px;
 }
 
 .agro{
@@ -45,6 +46,8 @@
 
 .agro-div-conteudo{
     width: 35%;
+    padding: 14px 0;
+    margin: 10px;
 }
 .agro-titulo{
     padding: 24px 0;
